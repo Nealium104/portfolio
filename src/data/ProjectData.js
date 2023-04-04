@@ -5,6 +5,8 @@ const ProjectData = [
     description:
       "This is a personal website for the trumpet player Robbie Collins",
     tools: "Next.js, Tailwind, React Framer Motion, Cloudinary, Vercel",
+    link: "https://www.collinstrumpet.com/",
+    github: "https://github.com/Nealium104/robbie-collins",
   },
   {
     title: "LexTalk Tech",
@@ -12,19 +14,25 @@ const ProjectData = [
     description:
       "This is the website for the quarterly tech conference LexTalk Tech",
     tools: "Next.js, Tailwind, AOS, Netlify",
+    link: "https://lextalk.tech/",
+    github: "https://github.com/bluegrass-devs/lextalk-tech",
   },
   {
     title: "Portfolio",
     src: "/",
     description: "You're here right now! This is my portfolio site",
-    tools: "Astro 3, ",
+    tools: "Astro 3, Tailwind, Netflify",
+    link: "https://neal-powers.com",
+    github: "https://github.com/Nealium104/portfolio",
   },
   {
     title: "Gig-Econ",
-    src: "https://gig-econ.vercel.app/",
+    src: "/",
     description:
       "This is a money tracker that uses a database to store user created data.",
     tools: "Next.js, Tailwind, Vercel, MongoDB",
+    link: "https://gig-econ.vercel.app/",
+    github: "https://github.com/Nealium104/counter",
   },
 ];
 
