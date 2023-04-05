@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-const {title, src, description, tools} = Astro.props
+const {title, src, description, tools, github, link} = Astro.props
 import { Icon } from 'astro-icon'
 ---
 
@@ -23,7 +23,7 @@ import { Icon } from 'astro-icon'
         <p class="inline">{`${tools}`}</p>
     </div>
     <div class="flex justify-evenly pt-4">
-        <a class="transition duration-120 hover:scale-125" href="https://github.com/Nealium104/lextalk-tech"><Icon class="w-8" pack="mdi" name="github" /></a>
-        <a class="transition duration-120 hover:scale-125" href="https://lextalk.tech/"><Icon class="w-8" pack="mdi" name="open-in-new" /></a>
+        <a class="transition duration-120 hover:scale-125" href={github}><Icon class="w-8" pack="mdi" name="github" /></a>
+        <a class="transition duration-120 hover:scale-125" href={link}><Icon class="w-8" pack="mdi" name="open-in-new" /></a>
     </div>
 </div>
