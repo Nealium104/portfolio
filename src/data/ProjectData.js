@@ -3,8 +3,9 @@ const ProjectData = [
     title: "Robbie Collins",
     src: "https://res.cloudinary.com/dwbwyzsyp/image/upload/v1687457354/Portfolio/Screenshot_2023-06-22_140801_ryrk6k.png",
     description:
-      "This is a personal website for the trumpet player Robbie Collins",
-    tools: "Next.js, Tailwind, React Framer Motion, Cloudinary, Vercel",
+      "This is a personal website for the trumpet player Robbie Collins. I'm proud of how pretty I got this to look!",
+    tools:
+      "Next.js, Tailwind, React Framer Motion, DaisyUI, Cloudinary, Vercel, SendGrid, Node.js",
     link: "https://www.collinstrumpet.com/",
     github: "https://github.com/Nealium104/robbie-collins",
   },
@@ -20,7 +21,7 @@ const ProjectData = [
   {
     title: "Portfolio",
     src: "/",
-    description: "You're here right now! This is my portfolio site",
+    description: "You're here right now! This is my portfolio site.",
     tools: "Astro 3, Tailwind, Netflify",
     link: "https://neal-powers.com",
     github: "https://github.com/Nealium104/portfolio",
