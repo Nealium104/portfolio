@@ -19,6 +19,13 @@ const ProjectData = [
     description: "You're here right now! This is my portfolio site",
     tools: "Astro 3, ",
   },
+  {
+    title: "Gig-Econ",
+    src: "https://gig-econ.vercel.app/",
+    description:
+      "This is a money tracker that uses a database to store user created data.",
+    tools: "Next.js, Tailwind, Vercel, MongoDB",
+  },
 ];
 
 export default ProjectData;

@@ -4,17 +4,19 @@ import Project from "../components/Project.astro";
 import ProjectData from '../data/ProjectData.js'
 ---
 <Layout>
-    <h1 class="text-2xl">I'm a web developer</h1>
-    <p>In the summer of 2022, I decided I wanted to really pursue a career in the tech industry. After almost a decade of interest in the field, I decided to take the first step and joined a bootcamp called 100Devs. During my time there and after graduation, I've been able to find work as a freelance web developer. Currently, I'm adding C# to my stack with Code You, a developer program here in Kentucky.</p>
-    <h2 class="text-2xl py-8">Completed Projects:</h2>
-    <section class="flex flex-col md:flex-row gap-4 justify-evenly">
+    <div class="w-1/2">
+        <h1 class="text-2xl">I'm a web developer</h1>
+        <p>In the summer of 2022, I decided I wanted to really pursue a career in the tech industry. After almost a decade of interest in the field, I decided to take the first step and joined a bootcamp called 100Devs. During my time there and after graduation, I've been able to find work as a freelance web developer. Currently, I'm adding C# to my stack with Code You, a developer program here in Kentucky.</p>
+    </div>
+    <h2 class="text-2xl py-2 pt-4">Completed Projects:</h2>
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch justify-items-end py-4">
         {ProjectData.map(project => (
-            <Project
-                title={project.title}
-                src={project.src}
-                description={project.description}
-                tools={project.tools}
-            />
+                <Project
+                    title={project.title}
+                    src={project.src}
+                    description={project.description}
+                    tools={project.tools}
+                />
         ))}
     </section>
 </Layout>
