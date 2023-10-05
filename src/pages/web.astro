@@ -1,10 +1,11 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import WebLayout from "../layouts/WebLayout.astro";
+import { fade } from "astro:transitions";
 import Project from "../components/Project.astro";
 import ProjectData from '../data/ProjectData.js'
 ---
-<Layout>
-    <div transition:animate="fade" class="px-4">
+<WebLayout>
+    <div transition:animate={fade({ duration: '0.4s' })} class="px-4">
         <div class="w-1/2 py-8">
             <h1 class="text-4xl">I'm a web developer</h1>
             <p>In the summer of 2022, I decided I wanted to really pursue a career in the tech industry. After almost a decade of interest in the field, I decided to take the first step and joined a bootcamp called 100Devs. During my time there and after graduation, I've been able to find work as a freelance web developer. Currently, I'm adding C# to my stack with Code You, a developer program here in Kentucky.</p>
@@ -23,4 +24,4 @@ import ProjectData from '../data/ProjectData.js'
             ))}
         </section>
     </div>
-</Layout>
+</WebLayout>
