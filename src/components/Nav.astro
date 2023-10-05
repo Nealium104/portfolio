@@ -19,7 +19,7 @@ import { Icon } from "astro-icon";
     </div>
 <!-- Mobile -->
         <div class="w-full">
-            <div class="absolute hidden flex flex-col bg-slate-900/50 w-full py-4" id="mobile-nav">
+            <div class="absolute hidden flex flex-col bg-slate-900/50 w-full py-4 z-20" id="mobile-nav">
                 <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/web">Web</a>
                 <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/photography">Photography</a>
                 <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/music">Music</a>
@@ -28,10 +28,16 @@ import { Icon } from "astro-icon";
         </div>
     </div>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('astro:page-load', () => {
             const button = document.getElementById('hamburger-button');
             const nav = document.getElementById('mobile-nav');
-        
+
+            button.addEventListener('click', function() {
+                nav.classList.toggle('hidden')
+            });
+        });
+
+        document.addEventListener('astro:after-swap', () => { 
             button.addEventListener('click', function() {
                 nav.classList.toggle('hidden')
             });
