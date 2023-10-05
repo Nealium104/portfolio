@@ -18,14 +18,14 @@ const ProjectData = [
     link: "https://lextalk.tech/",
     github: "https://github.com/bluegrass-devs/lextalk-tech",
   },
-  {
-    title: "Portfolio",
-    src: "/",
-    description: "You're here right now! This is my portfolio site.",
-    tools: "Astro 3, Tailwind, Netflify",
-    link: "https://neal-powers.com",
-    github: "https://github.com/Nealium104/portfolio",
-  },
+  // {
+  //   title: "Portfolio",
+  //   src: "/",
+  //   description: "You're here right now! This is my portfolio site.",
+  //   tools: "Astro 3, Tailwind, Netflify",
+  //   link: "https://neal-powers.com",
+  //   github: "https://github.com/Nealium104/portfolio",
+  // },
   {
     title: "Gig-Econ",
     src: "/",

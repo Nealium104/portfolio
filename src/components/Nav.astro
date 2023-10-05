@@ -1,15 +1,46 @@
 ---
-
+import { Icon } from "astro-icon";
 ---
-<nav class="py-8 px-4 text-2xl max-w-screen-xl mx-auto">
-    <div class="flex justify-between">
-        <a href="/"><h2>Neal Powers</h2></a>
-        <div class="flex">
-            <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/">Home</a>
-            <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/web">Web</a>
-            <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/photography">Photography</a>
-            <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/music">Music</a>
-            <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/contact">Contact</a>
+<nav class="fixed md:relative py-8 px-4 text-2xl max-w-screen-xl mx-auto bg-slate-900/75 w-full">
+    <div>
+        <div class="flex flex-col md:flex-row justify-between w-full">
+            <div class="flex items-center w-full">
+                <button class="block md:hidden px-4" id="hamburger-button"><Icon class="text-white w-8" pack="mdi" name="menu"/></button>
+                <a href="/"><h2>Neal Powers</h2></a>
+            </div>
+    <!-- Desktop -->
+            <div class="hidden md:flex">
+                <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/">Home</a>
+                <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/web">Web</a>
+                <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/photography">Photography</a>
+                <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/music">Music</a>
+                <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/contact">Contact</a>
+            </div>
+    </div>
+<!-- Mobile -->
+        <div class="w-full">
+            <div class="hidden absolute bg-slate-900/50 w-full py-4" id="mobile-nav">
+                <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/web">Web</a>
+                <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/photography">Photography</a>
+                <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/music">Music</a>
+                <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/contact">Contact</a>
+            </div>
         </div>
     </div>
+    <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            const button = document.getElementById('hamburger-button');
+            const nav = document.getElementById('mobile-nav');
+        
+            button.addEventListener('click', function() {
+                if (nav.classList.contains('hidden')) {
+                    nav.classList.remove('hidden');
+                    nav.classList.add('flex', 'flex-col');
+                } else {
+                    nav.classList.add('hidden');
+                    nav.classList.remove('flex', 'flex-col');
+                }
+            });
+        });
+    </script>
 </nav>

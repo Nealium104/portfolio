@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import '@fontsource/fira-sans'
@@ -10,11 +11,12 @@ import '@fontsource/fira-sans'
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Neal Powers</title>
+		<ViewTransitions />
 	</head>
     <body class="px-8 bg-slate-900 text-white/90">
         <Nav />
-		<main class="min-h-screen max-w-screen-xl mx-auto bg-slate-800 px-4">
+		<main class="pt-12 min-h-screen max-w-screen-xl mx-auto bg-slate-800 px-4">
 			<slot />
 		</main>
 		<Footer />
