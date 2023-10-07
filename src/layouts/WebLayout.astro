@@ -14,11 +14,13 @@ import '@fontsource/fira-sans'
 		<title>Neal Powers</title>
 		<ViewTransitions />
 	</head>
-    <body class="px-8 bg-red-900 text-white/90">
-        <Nav />
-		<main class="pt-12 min-h-screen max-w-screen-xl mx-auto bg-red-800 px-4">
-			<slot />
-		</main>
-		<Footer />
+    <body class="px-8 bg-red-900 text-white/90 max-w-screen-xl">
+        <div class="max-w-screen-xl mx-auto">
+            <Nav />
+            <main class="pt-12 min-h-screen max-w-screen-xl mx-auto bg-red-800 px-4">
+                <slot />
+            </main>
+            <Footer />
+        </div>
     </body>
 </html>

@@ -1,47 +1,49 @@
 ---
 import { Icon } from "astro-icon";
 ---
-<nav class="fixed md:relative py-8 px-4 text-2xl max-w-screen-xl mx-auto bg-slate-900/75 w-full z-20">
-    <div>
-        <div class="flex flex-col md:flex-row justify-between w-full">
-            <div class="flex items-center w-full">
-                <button class="block md:hidden px-4" id="hamburger-button"><Icon class="text-white w-8" pack="mdi" name="menu"/></button>
-                <a href="/"><h2>Neal Powers</h2></a>
-            </div>
-    <!-- Desktop -->
-            <div class="hidden md:flex">
-                <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/">Home</a>
-                <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/web">Web</a>
-                <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/photography">Photography</a>
-                <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/music">Music</a>
-                <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/contact">Contact</a>
-            </div>
-    </div>
-<!-- Mobile -->
-        <div class="w-full">
-            <div class="absolute hidden flex flex-col bg-slate-900/50 w-full py-4" id="mobile-nav">
-                <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/web">Web</a>
-                <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/photography">Photography</a>
-                <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/music">Music</a>
-                <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/contact">Contact</a>
+<div class="flex flex-col items-center">
+    <nav class="fixed md:relative py-8 px-4 text-2xl w-full mx-8 bg-slate-900/75 z-20">
+        <div>
+            <div class="flex flex-col md:flex-row justify-between w-full">
+                <div class="flex items-center w-full">
+                    <button class="block md:hidden px-4" id="hamburger-button"><Icon class="text-white w-8" pack="mdi" name="menu"/></button>
+                    <a href="/"><h2>Neal Powers</h2></a>
+                </div>
+        <!-- Desktop -->
+                <div class="hidden md:flex">
+                    <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/">Home</a>
+                    <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/web">Web</a>
+                    <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/photography">Photography</a>
+                    <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/music">Music</a>
+                    <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/contact">Contact</a>
+                </div>
+        </div>
+    <!-- Mobile -->
+            <div class="w-full flex flex-col items-center">
+                <div class="absolute hidden flex flex-col gap-8 justify-evenly items-center bg-slate-900/50 w-full h-screen my-8" id="mobile-nav">
+                    <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/web">Web</a>
+                    <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/photography">Photography</a>
+                    <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/music">Music</a>
+                    <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/contact">Contact</a>
+                </div>
             </div>
         </div>
-    </div>
-    <script>
-        document.addEventListener('astro:page-load', () => {
-            const button = document.getElementById('hamburger-button');
-            const nav = document.getElementById('mobile-nav');
-
-            button.addEventListener('click', function() {
-                nav.classList.toggle('hidden')
+        <script>
+            document.addEventListener('astro:page-load', () => {
+                const button = document.getElementById('hamburger-button');
+                const nav = document.getElementById('mobile-nav');
+    
+                button.addEventListener('click', function() {
+                    nav.classList.toggle('hidden')
+                });
             });
-        });
-
-        document.addEventListener('astro:after-swap', () => { 
-            button.addEventListener('click', function() {
-                nav.classList.toggle('hidden')
+    
+            document.addEventListener('astro:after-swap', () => { 
+                button.addEventListener('click', function() {
+                    nav.classList.toggle('hidden')
+                });
             });
-        });
-
-    </script>
-</nav>
+    
+        </script>
+    </nav>
+</div>
