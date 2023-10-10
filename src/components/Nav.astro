@@ -2,7 +2,7 @@
 import { Icon } from "astro-icon";
 ---
 <div class="flex flex-col items-center">
-    <nav class="fixed md:relative py-8 px-4 text-2xl w-full mx-8 bg-white z-20 text-black">
+    <nav class="fixed md:relative py-8 px-4 text-2xl w-full mx-8 bg-gray-600/50 z-20 text-white">
         <div>
             <div class="flex flex-col md:flex-row justify-between w-full">
                 <div class="flex items-center w-full">
@@ -11,11 +11,11 @@ import { Icon } from "astro-icon";
                 </div>
         <!-- Desktop -->
                 <div class="hidden md:flex">
-                    <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/">Home</a>
+                    <a class="px-4 transition duration-150 hover:-translate-y-2 hover:scale-125" href="/">Home</a>
                     <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/web">Web</a>
-                    <a class="px-4 transition duration-150 hover:-translate-y-2 hover:scale-125" href="/photography">Photography</a>
+                    <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-photo-background hover:scale-125" href="/photography">Photography</a>
                     <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-red-900 hover:scale-125" href="/music">Music</a>
-                    <a class="px-4 transition duration-150 hover:-translate-y-2 hover:text-primary hover:scale-125" href="/contact">Contact</a>
+                    <a class="px-4 transition duration-150 hover:-translate-y-2  hover:scale-125" href="/contact">Contact</a>
                 </div>
         </div>
     <!-- Mobile -->
@@ -24,7 +24,7 @@ import { Icon } from "astro-icon";
                     <a class="px-4 transition duration-150 hover:text-primary hover:scale-125" href="/web">Web</a>
                     <a class="px-4 transition duration-150 hover:text-white hover:scale-125" href="/photography">Photography</a>
                     <a class="px-4 transition duration-150 hover:text-red-900 hover:scale-125" href="/music">Music</a>
-                    <a class="px-4 transition duration-150 hover:text-primary hover:scale-125" href="/contact">Contact</a>
+                    <a class="px-4 transition duration-150 hover:scale-125" href="/contact">Contact</a>
                 </div>
             </div>
         </div>
