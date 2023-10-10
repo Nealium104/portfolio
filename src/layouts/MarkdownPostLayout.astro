@@ -1,0 +1,15 @@
+---
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.astro";
+const { frontmatter } = Astro.props;
+---
+<div class="bg-gray-800 text-white">
+    <Nav />
+    <div class="min-h-screen">
+        <h1>{frontmatter.title}</h1>
+        <p>Published on: {frontmatter.pubDate.slice(0,10)}</p>
+        <p>Written by {frontmatter.author}</p>
+        <slot />
+    </div>
+    <Footer />
+</div>
