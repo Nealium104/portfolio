@@ -1,12 +1,12 @@
 ---
 import WebLayout from "../layouts/WebLayout.astro";
-import { fade } from "astro:transitions";
+import { slide } from "astro:transitions";
 import Project from "../components/Project.astro";
 import ProjectData from '../data/ProjectData.js'
 ---
 <WebLayout>
-    <div transition:animate={fade({ duration: '0.4s' })} class="px-4 pt-12 md:py-8">
-        <div class="w-full py-8 px-8 md:w-1/2 bg-black/25 border border-black rounded-lg">
+    <div transition:animate={slide({ duration: '1.0s' })} class="px-4 pt-12 md:py-8">
+        <div class="w-full py-8 px-8 md:w-1/2 bg-slate-700 border border-black">
             <h1 class="text-4xl pb-4">I'm a web developer</h1>
             <p>In the summer of 2022, I decided I wanted to really pursue a career in the tech industry. After almost a decade of interest in the field, I decided to take the first step and joined a bootcamp called 100Devs. During my time there and after graduation, I've been able to find work as a freelance web developer. Currently, I'm adding C# to my stack with Code You, a developer program here in Kentucky.</p>
         </div>
