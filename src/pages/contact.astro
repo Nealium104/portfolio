@@ -15,10 +15,13 @@ import Layout from "../layouts/Layout.astro"
     <script type="module">
         document.getElementById('contact-form').addEventListener('submit', async function(e) {
           e.preventDefault();
-
+          
           const formData = new FormData(e.target);
           const data = Object.fromEntries(formData);
-
+          const submitButton = e.target.querySelector('button[type="submit"]');
+          
+          submitButton.disabled = true;  // Disable the submit button
+          
           const response = await fetch(e.target.action, {
             method: 'POST',
             headers: {
@@ -26,6 +29,14 @@ import Layout from "../layouts/Layout.astro"
             },
             body: JSON.stringify(data),
           });
+          
+          if (response.ok) {
+            alert('Email sent successfully!');
+          } else {
+            alert('Error sending email.');
+          }
+          
+          submitButton.disabled = false;  // Re-enable the submit button
         });
       </script>
 </Layout>
