@@ -12,7 +12,7 @@ exports.handler = async (event, context) => {
 
     await client.sendEmail({
       From: "nealpowers@neal-powers.com",
-      To: "neal.powers@outlook.com",
+      To: "nealpowers@neal-powers.com",
       Subject: `New message from ${name}`,
       TextBody: `Name: ${name}\nEmail: ${email}\n\n${message}`,
     });
