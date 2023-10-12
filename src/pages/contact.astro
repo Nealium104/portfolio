@@ -5,55 +5,11 @@ import Layout from "../layouts/Layout.astro"
 <Layout>
     <main transition:animate="slide">
        <h1>Contact me below:</h1>
-       <form class="flex flex-col gap-4 items-center justify-center h-96" id="contact-form" method="post" action="/send">
+       <form class="flex flex-col gap-4 items-center justify-center h-96" id="contact-form" method="post" action="/.netlify/functions/send">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" placeholder="Your Message" required></textarea>
         <button type="submit">Send</button>
       </form>      
     </main>
-    <script>
-        const form = document.getElementById("contact");
-        var xhr = new XMLHttpRequest();
-      
-        const handleFormSubmission = (event) => {
-          // prevent page from reloading
-          event.preventDefault();
-      
-          const data = event.target.elements;
-      
-          // put into JSON object
-          const formData = {
-            fname: data.fname.value,
-            lname: data.lname.value,
-            email: data.email.value,
-            message: data.message.value,
-          };
-      
-          // Set POST request method to our netlify function
-          xhr.open("POST", ".netlify/functions/contact");
-      
-          // Set the request headers
-          xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
-      
-          // Send the data as JSON to our netlify function
-          xhr.send(JSON.stringify(formData));
-      
-          // Handle the response
-          xhr.onload = function () {
-            const response = JSON.parse(xhr.responseText);
-      
-            if (xhr.status === 200) {
-              // The request was successful
-              console.log("success");
-            } else {
-              // The request failed
-              console.log("fail");
-            }
-          };
-        };
-      
-        // add the submission event listener
-        form.addEventListener("submit", handleFormSubmission, true);
-      </script>
 </Layout>
