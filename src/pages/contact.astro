@@ -4,13 +4,24 @@ import Layout from "../layouts/Layout.astro"
 
 <Layout>
     <main transition:animate="slide">
-       <h1>Contact me below:</h1>
-       <form class="flex flex-col gap-4 items-center justify-center h-96" id="contact-form" method="post" action="/.netlify/functions/send">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send</button>
-      </form>      
+       <div class="flex flex-col items-center h-fit py-8 bg-slate-700 w-fit mx-auto">
+        <h1 class="text-3xl">Contact me</h1>
+           <form class="flex flex-col gap-4 items-center justify-center px-8" id="contact-form" method="post" action="/.netlify/functions/send">
+            <div class="flex flex-col">
+                <label for="name">Name:</label>
+                <input class="text-black px-2" type="text" name="name" placeholder="John Doe" required>
+            </div>
+            <div class="flex flex-col">
+                <label for="email">Email:</label>
+                <input class="text-black px-2" type="email" name="email" placeholder="johndoe@example.com" required>
+            </div>
+            <div class="flex flex-col">
+                <label for="message">Message:</label>
+                <textarea class="text-black px-2" name="message" placeholder="Hi, I want to collaborate!" rows="4" required></textarea>
+            </div>
+            <button class="bg-slate-900 px-4 py-2hover:scale-110 hover:bg-slate-800" type="submit">Send</button>
+          </form>      
+       </div>
     </main>
     <script type="module">
         document.getElementById('contact-form').addEventListener('submit', async function(e) {
