@@ -12,4 +12,20 @@ import Layout from "../layouts/Layout.astro"
         <button type="submit">Send</button>
       </form>      
     </main>
+    <script type="module">
+        document.getElementById('contact-form').addEventListener('submit', async function(e) {
+          e.preventDefault();
+
+          const formData = new FormData(e.target);
+          const data = Object.fromEntries(formData);
+
+          const response = await fetch(e.target.action, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+          });
+        });
+      </script>
 </Layout>
