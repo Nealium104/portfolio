@@ -1,8 +1,9 @@
 ---
 title: astro-blog
-pubDate: 2023-10-10
+pubDate: 10/10/2023
 author: Neal Powers
 layout: "../../layouts/MarkdownPostLayout.astro"
+summary: How to get started with Astro
 ---
 
 # This is a post about astro and how it works
