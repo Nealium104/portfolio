@@ -35,7 +35,7 @@ import { Icon } from "astro-icon";
                 const button = document.getElementById('hamburger-button');
                 const nav = document.getElementById('mobile-nav');
     
-                button.addEventListener('click', function() {
+                button.addEventListener('click', () => {
                     nav.classList.toggle('hidden')
                 });
             });
