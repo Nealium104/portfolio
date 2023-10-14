@@ -6,10 +6,6 @@ import ProjectData from '../data/ProjectData.js'
 ---
 <WebLayout>
     <div transition:animate={slide({ duration: '1.0s' })} class="px-4 pt-12 md:py-8">
-        <div class="w-full py-8 px-8 md:w-1/2 bg-slate-700 border border-black">
-            <h1 class="text-4xl pb-4">I'm a web developer</h1>
-            <p>In the summer of 2022, I decided I wanted to really pursue a career in the tech industry. After almost a decade of interest in the field, I decided to take the first step and joined a bootcamp called 100Devs. During my time there and after graduation, I've been able to find work as a freelance web developer. Currently, I'm adding C# to my stack with Code You, a developer program here in Kentucky.</p>
-        </div>
         <h2 class="text-2xl pt-12">Completed Projects:</h2>
         <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch justify-items-end py-4">
             {ProjectData.map(project => (

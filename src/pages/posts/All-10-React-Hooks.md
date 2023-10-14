@@ -1,12 +1,16 @@
 ---
-title: 🖥️ All 10 React Hooks
+title: 🖥️ All 10 Core React Hooks
 pubDate: 08/22/2023
 author: Neal Powers
 layout: "../../layouts/MarkdownPostLayout.astro"
 summary: A write up of all 10 React hooks
 ---
 
-This was made with a lot of different resources. The main links are to the documentation, but I also recommend this great [fireship](https://www.youtube.com/watch?time_continue=525&v=TNhaISOUy6Q&embeds_referring_euri=https%3A%2F%2Ffireship.io%2F&embeds_referring_origin=https%3A%2F%2Ffireship.io&source_ve_path=Mjg2NjMsMzY4NDIsMjg2NjY&feature=emb_logo) video on React.
+Hi there. Neal here. This was made with a lot of different resources. The main links are to the documentation, but I also recommend this great [fireship](https://www.youtube.com/watch?time_continue=525&v=TNhaISOUy6Q&embeds_referring_euri=https%3A%2F%2Ffireship.io%2F&embeds_referring_origin=https%3A%2F%2Ffireship.io&source_ve_path=Mjg2NjMsMzY4NDIsMjg2NjY&feature=emb_logo) video on React. It served as an entry point to each one of these little write ups for me.
+
+# React and its hooks
+
+Welcome to my guide on all 10 core React hooks. Each one is a very short explanation as well as an easy example for getting your brain wrapped around it. If you really want to understand and be able to use these hooks, I recommend building with them! Feel free to come back here like I do just to get your brain around them as you start using some of the more exotic hooks here.
 
 ## [useState](https://react.dev/reference/react/useState)
 
@@ -32,12 +36,12 @@ function useStateExample () {
 
 ## [useEffect](https://react.dev/reference/react/useEffect)
 
-- Handles things at the main lifecycle points, has a dependency array for tracking specific data. This is specifically for [[Side Effects]] only.
+- Handles things at the main lifecycle points, has a dependency array for tracking specific data. This is specifically for side effects only.
 - useEffect takes a function your define as its first argument
 - As its second argument, it takes a dependency array. If it's empty, it will only run once, when the component is mounted
 
 ```jsx
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 function Counter() {
@@ -128,18 +132,38 @@ function ThemedButton() {
 - a React Hook that lets you reference a value that’s not needed for rendering.
 - This can be used for anything that doesn't need to render, but is often used to grab DOM elements
 - Highly connected to useState, as they do basically the same thing, but useState is for when you need the change to render.
+- Also, worth mentioning that refs persist their values across renders, unlike state which will trigger a rerender.
 
 ```jsx
 import { useRef } from "react";
 
 function Stopwatch() {
-  const intervalRef = useRef(0);
+  const [seconds, setSeconds] = useState(0);
+  const intervalRef = useRef(null);
+
+  const handleStartClick = () => {
+    if (intervalRef.current !== null) return; // To ensure we don't start multiple intervals
+
+    intervalRef.current = setInterval(() => {
+      setSeconds((prevSeconds) => prevSeconds + 1);
+    }, 1000);
+  };
+
+  const handleStopClick = () => {
+    clearInterval(intervalRef.current);
+    intervalRef.current = null;
+  };
+
+  return (
+    <div>
+      <p>{seconds} seconds</p>
+      <button onClick={handleStartClick}>Start</button>
+      <button onClick={handleStopClick}>Stop</button>
+    </div>
+  );
 }
 
-function handleStartClick() {
-  const intervalId = setInterval(() => {}, 1000);
-  intervalRef.current = intervalId;
-}
+export default Stopwatch;
 
 // A second example to show grabbing HTML elements
 
@@ -152,36 +176,37 @@ function App() {
 }
 ```
 
-## **[useReducer](https://react.dev/reference/react/useReducer)**
+## [useReducer](https://react.dev/reference/react/useReducer)
 
 - This uses the "Redux pattern", which is basically a more complicated way to do state. But this can be useful when you start getting into lots and lots of different state changes. Instead of using a billion state changes, you can useReducer to reduce them to one.
 - Basically, you dispatch (that's what the second argument in the array of the hook is) actions that go into a reducer function and that reducer function decides how to compute the next state.
-- More specifically, you'll take the state and then get a UI element that will affect the state. Then you dispatch the action using a type: 'data' that will always be a string. Then you'll pass it to the reducer function which is basically just a long switch statement that says "tell me what that type is. I'll do this with the state"
+- More specifically, you'll take the state and then get a UI element that will affect the state. Then you dispatch the action using a type: 'data' (in the example "decrement" or "increment") that will always be a string. Then you'll pass it to the reducer function which is basically just a long switch statement that says "tell me what that type is. I'll do this with the state"
 
 ```jsx
-function reducer(state, action){
-	switch (action.type) {
-		case 'increment':
-			return state + 1;
-		case 'decrement':
-			return state - 1;
-		default:
-			throw new Error();
-	}
+function reducer(state, action) {
+  switch (action.type) {
+    case "increment":
+      return state + 1;
+    case "decrement":
+      return state - 1;
+    default:
+      throw new Error();
+  }
 }
 
 function App() {
-	const [state, dispatch] = useReducer(reducer, 0);
-	return (
-	Count: {state}
-	<button onClick={() => dispatch({type: 'decrement'})}>-</button>
-	<button onClick={() => dispatch({type: 'increment'})}>+</button>
-	)
+  const [state, dispatch] = useReducer(reducer, 0);
+  return (
+    <>
+      <span>Count: {state}</span>
+      <button onClick={() => dispatch({ type: "decrement" })}>-</button>
+      <button onClick={() => dispatch({ type: "increment" })}>+</button>
+    </>
+  );
 }
-
 ```
 
-## [**useMemo**](https://react.dev/reference/react/useMemo)
+## [useMemo](https://react.dev/reference/react/useMemo)
 
 - This hook is for caching expensive calculations. Keep in mind, not every calculation needs to be memoized.
 - You basically just set useMemo as the value of whatever function is expensive to use.
@@ -198,7 +223,7 @@ function App() {
 }
 ```
 
-## [**useCallback**](https://react.dev/reference/react/useCallback)
+## [useCallback](https://react.dev/reference/react/useCallback)
 
 - This is the functional version of useMemo.
 - When you define a new function in a component, a new function object is created each time the component is re-rendered. Usually not a big deal, but if it is, you can memoize the actual function.
@@ -259,12 +284,12 @@ function App() {
 
   useLayoutEffect(() => {
     const rect = myBtn.current.getBoundingClientRect();
-    console.log(box.height);
+    console.log(rect.height);
   });
 
   return (
     <>
-      <button ref={ref}></button>
+      <button ref={myBtn}></button>
     </>
   );
 }
@@ -275,5 +300,30 @@ function App() {
 - Used when you're making your own hooks
 
 ```jsx
+import { useState, useEffect, useDebugValue } from "react";
 
+function useIsMobile(breakpoint = 768) {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < breakpoint);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < breakpoint);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [breakpoint]);
+
+  useDebugValue(isMobile ? "Mobile" : "Desktop");
+
+  return isMobile;
+}
+
+function App() {
+  const isMobile = useIsMobile(1024);
+  return <div>{isMobile ? "Mobile mode" : "Desktop mode"}</div>;
+}
+
+export default App;
 ```
+
+# That's all, folks!
+
+Thanks for reading! I hope you found something useful to you on your journey. Check back for more!
