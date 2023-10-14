@@ -1,10 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import BlogPost from "../components/BlogPost.astro";
 const allPosts = await Astro.glob('../pages/posts/*.md')
 ---
 
 <Layout>
     <h1>Hi, this is the blog part of the site</h1>
     <h2>Here's a list of all my blogposts:</h2>
-    {allPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        {allPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} pubDate={post.frontmatter.pubDate} summary={post.frontmatter.summary}/>)}
+    </div>
 </Layout>
