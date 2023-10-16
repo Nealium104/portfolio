@@ -1,26 +1,36 @@
 ---
+import Socials from "../components/Socials.astro";
 import Layout from "../layouts/Layout.astro";
 import { slide } from "astro:transitions";
 ---
 
 <Layout>
     <main transition:animate={slide({ duration: '1.0s' })}>
-       <div class="flex flex-col items-center h-fit py-8 bg-slate-700 w-fit mx-auto">
-        <h1 class="text-3xl">Contact me</h1>
+       <div class="flex flex-col pt-2 pb-4 items-center h-fit bg-slate-700 w-fit mx-auto">
+        <h1 class="text-3xl py-4">Contact me</h1>
+        <div class="pt-2 pb-4">
+          <Socials />
+        </div>  
            <form class="flex flex-col gap-4 items-center justify-center px-8" id="contact-form" method="post" action="/.netlify/functions/send">
-            <div class="flex flex-col">
-                <label for="name">Name:</label>
-                <input class="text-black px-2" type="text" name="name" placeholder="John Doe" required>
+            <div class="flex gap-4">
+              <div class="flex flex-col">
+                  <label for="name">Name:</label>
+                  <input class="text-black px-2" type="text" name="name" placeholder="John Doe" required>
+              </div>
+              <div class="flex flex-col">
+                  <label for="email">Email:</label>
+                  <input class="text-black px-2" type="email" name="email" placeholder="johndoe@example.com" required>
+              </div>
             </div>
-            <div class="flex flex-col">
-                <label for="email">Email:</label>
-                <input class="text-black px-2" type="email" name="email" placeholder="johndoe@example.com" required>
-            </div>
-            <div class="flex flex-col">
+            <div class="flex flex-col w-full">
+              <label for="subject">Subject:</label>
+              <input class="text-black px-2" type="email" name="email" placeholder="Your next project" required>
+          </div>
+            <div class="flex flex-col w-full">
                 <label for="message">Message:</label>
                 <textarea class="text-black px-2" name="message" placeholder="Hi, I want to collaborate!" rows="4" required></textarea>
             </div>
-            <button class="bg-slate-900 px-4 py-2 hover:scale-110 hover:bg-slate-800" type="submit">Send</button>
+            <button class="bg-slate-900 px-4 py-2 transition duration-200 hover:scale-110 hover:bg-slate-800" type="submit">Send</button>
           </form>      
        </div>
     </main>

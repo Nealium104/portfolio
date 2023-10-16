@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import { slide } from 'astro:transitions';
 import { Image } from 'astro:assets';
+import Socials from '../components/Socials.astro'
+import Icon from "astro-icon";
 ---
 <Layout>
 	<main transition:animate={slide({ duration: '1.0s' })} class="text-4xl py-12 flex flex-col gap-8 px-4">
@@ -11,16 +13,20 @@ import { Image } from 'astro:assets';
 			</div>
 			<div>
 				<h1 class="py-8 text-5xl">Hi, I'm Neal</h1>
-				<p class="py-2">I make useful <a href="/web" class="text-primary text-5xl font-bold transition hover:translate-x-8 ease-in-out duration-110 inline-block">websites</a></p>
+				<p class="py-2">I make useful <a href="/projects" class="text-primary text-5xl font-bold transition hover:translate-x-8 ease-in-out duration-110 inline-block">websites</a></p>
 				<!-- <p class="py-2">I take cool <a href="/photography" class="text-photo-background text-5xl font-bold transition hover:translate-x-8 ease-in-out duration-110 inline-block">photos</a></p>
 				<p class="py-2">I make pretty <a href="/music" class="text-red-900 text-5xl font-bold transition hover:translate-x-8 ease-in-out duration-110 inline-block">music</a></p> -->
 				<p class="">If you want my help with that,</p>
 				<a href="/contact" class="block my-4 py-3 px-2 text-white bg-gray-700 text-3xl w-fit border-2 border-gray-500 transition hover:bg-primary/50 hover:scale-110 ease-in-out duration-110">Let's Chat</a>
 			</div>
 		</div>
+		<Socials />
 		<div class="w-full py-8 md:w-1/2 bg-slate-700 border border-black px-4">
             <h1 class="text-4xl pb-4">I'm a web developer</h1>
             <p class="text-xl">In the summer of 2022, I decided I wanted to really pursue a career in the tech industry. After almost a decade of interest in the field, I decided to take the first step and joined a bootcamp called 100Devs. During my time there and after graduation, I've been able to find work as a freelance web developer. Currently, I'm adding C# to my stack with Code You, a developer program here in Kentucky.</p>
         </div>
+		<div class="bg-gray-700 px-4 py-2 w-48">
+			<a href="https://nealpowers-my.sharepoint.com/:w:/g/personal/nealpowers_neal-powers_com/EbRyA4s7zHZOtzbAlsThl4UBljkJWTdeyk22ggRqdP4sLw?download=1">My resume</a>
+		</div>
 	</main>
 </Layout>

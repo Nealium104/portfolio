@@ -4,6 +4,7 @@ pubDate: 08/22/2023
 author: Neal Powers
 layout: "../../layouts/MarkdownPostLayout.astro"
 summary: A write up of all 10 React hooks
+tags: react, resources, frameworks
 ---
 
 Hi there. Neal here. This was made with a lot of different resources. The main links are to the documentation, but I also recommend this great [fireship](https://www.youtube.com/watch?time_continue=525&v=TNhaISOUy6Q&embeds_referring_euri=https%3A%2F%2Ffireship.io%2F&embeds_referring_origin=https%3A%2F%2Ffireship.io&source_ve_path=Mjg2NjMsMzY4NDIsMjg2NjY&feature=emb_logo) video on React. It served as an entry point to each one of these little write ups for me.
