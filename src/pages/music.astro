@@ -1,6 +1,7 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import Layout from "../layouts/Layout.astro";
+import { slide } from "astro:transitions";
 ---
-<Layout transition:animate="slide">
+<Layout transition:animate="slide" transition:animate={slide({ duration: '1.0s' })}>
     <main>Hi , this is a placeholder</main>
 </Layout>

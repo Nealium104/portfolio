@@ -1,12 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 import { slide } from 'astro:transitions';
 import { Image } from 'astro:assets';
 ---
 <Layout>
-	<main transition:animate={slide({ duration: '0.4s' })} class="text-4xl py-12 flex flex-col gap-8">
-		<div class="flex flex-col md:flex-row items-center justify-center w-full h-full">
-			<div class="w-full md:w-1/2 md:px-4 h-full">
+	<main transition:animate={slide({ duration: '1.0s' })} class="text-4xl py-12 flex flex-col gap-8 px-4">
+		<div class="flex flex-col md:flex-row items-center w-full h-full">
+			<div class="w-full md:w-1/2 pr-4 h-full">
 				<Image class="w-full" src="https://res.cloudinary.com/dwbwyzsyp/image/upload/v1688590330/Portfolio/Seattle_square.jpg" height="4000" width="4000" alt="Neal over the seattle skyline" />
 			</div>
 			<div>
@@ -14,11 +14,11 @@ import { Image } from 'astro:assets';
 				<p class="py-2">I make useful <a href="/web" class="text-primary text-5xl font-bold transition hover:translate-x-8 ease-in-out duration-110 inline-block">websites</a></p>
 				<!-- <p class="py-2">I take cool <a href="/photography" class="text-photo-background text-5xl font-bold transition hover:translate-x-8 ease-in-out duration-110 inline-block">photos</a></p>
 				<p class="py-2">I make pretty <a href="/music" class="text-red-900 text-5xl font-bold transition hover:translate-x-8 ease-in-out duration-110 inline-block">music</a></p> -->
-				<p class="pt-12">If you want my help with that,</p>
+				<p class="">If you want my help with that,</p>
 				<a href="/contact" class="block my-4 py-3 px-2 text-white bg-gray-700 text-3xl w-fit border-2 border-gray-500 transition hover:bg-primary/50 hover:scale-110 ease-in-out duration-110">Let's Chat</a>
 			</div>
 		</div>
-		<div class="w-full py-8 md:w-1/2 bg-slate-700 border border-black px-4 mx-16">
+		<div class="w-full py-8 md:w-1/2 bg-slate-700 border border-black px-4">
             <h1 class="text-4xl pb-4">I'm a web developer</h1>
             <p class="text-xl">In the summer of 2022, I decided I wanted to really pursue a career in the tech industry. After almost a decade of interest in the field, I decided to take the first step and joined a bootcamp called 100Devs. During my time there and after graduation, I've been able to find work as a freelance web developer. Currently, I'm adding C# to my stack with Code You, a developer program here in Kentucky.</p>
         </div>
