@@ -5,7 +5,7 @@ exports.handler = async (event, context) => {
     return { statusCode: 405, body: "Method Not Allowed" };
   }
 
-  const { name, email, message } = JSON.parse(event.body);
+  const { name, email, message, subject } = JSON.parse(event.body);
 
   try {
     const client = new postmark.ServerClient(process.env.POSTMARK_API_KEY);
@@ -13,7 +13,7 @@ exports.handler = async (event, context) => {
     await client.sendEmail({
       From: "nealpowers@neal-powers.com",
       To: "nealpowers@neal-powers.com",
-      Subject: `New message from ${name}`,
+      Subject: `${subject}`,
       TextBody: `Name: ${name}\nEmail: ${email}\n\n${message}`,
     });
 
