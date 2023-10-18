@@ -28,7 +28,7 @@ const ProjectData = [
   // },
   {
     title: "Gig-Econ",
-    src: "/",
+    src: "https://res.cloudinary.com/dwbwyzsyp/image/upload/v1689557116/Portfolio/Screenshot_2023-07-16_212458_oonzxt.png",
     description:
       "This is a money tracker that uses a database to store user created data.",
     tools: "Next.js, Tailwind, Vercel, MongoDB",
