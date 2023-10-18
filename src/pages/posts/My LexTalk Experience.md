@@ -26,26 +26,31 @@ The schedule was filled with a good mix of things for every level. Here's the fu
 ### Ham Radio: Where Even Experts are Amateurs
 
 Presenter: Todd Wiley
+
 This was a talk by Todd Wiley, another Oracle developer. It was a really good soft intro to the conference. Todd talked about both how they work as well as some of the surrounding things like the fact that the guy that figured out how to send images over radio is actually a UK grad!
 
 ### Things I hate about developers
 
 Presenter: Davis St. Aubin
+
 Davis talked about some different things we can do as developers to make their life not so difficult. Things like retries being too fast and hard coding default config variables. All good stuff! Davis also mentioned some of the inequality issues we face in the tech industry, a welcome reminder. (I also learned Davis's last name is actually "St. Aubin". A nightmare for putting in a last name with both a space and a . in it!)
 
 ### Introduction to Vue.js
 
 Presenter: Craig Geil
+
 Craig talked about Vue.js, a framework for building websites similar to React and Angular. He basically walked through some of the introductory things you'd want to know like usage of it in comparison to other frameworks, what jobs are like, and why you'd learn it. On the other side of it, Vue looks like an excellent option if you're getting into your first framework or just looking to avoid some of the headaches of the other popular frameworks.
 
 ### ASM R you serious
 
 Presenter: John Martinez
+
 This was one of my favorites. John basically took a page out of John Carmack's book and locked himself in a hotel room for a weekend and learned about Assembly. He wrote a program that basically acts like assembly code to run some basic python. His entire talk was walking through how a computer works with code (using a simple loop as an example). His "toy" code was very approachable and I came out of it with a much better understanding of how the computer actually does what it does!
 
 ### LLMs throughout the lifecycle of Generative AI Projects
 
 Presenter: Lee Park
+
 This also was an absolutely amazing talk. Lee is a PhD candidate in statistics at UK apparently with a cool interest in LLM's! His talk walked through from a high level how these things work. He talked about tokenizing, the encoder-decoder process, embedding, and even touched on what's being worked on right now with Augmented Retrieval Generation. Seriously cool and cutting edge stuff.
 
 # Thanks for reading!
