@@ -11,9 +11,11 @@ const allPosts = allPostsUnsorted.sort((a,b) => {
 ---
 
 <Layout transition:animate={slide({ duration: '1.0s' })}>
-    <h1 class="text-5xl">This is my blog!</h1>
-    <p class="text-2xl">Every once in a while, I'll organize some of my thoughts or resources and make a little blogpost here.</p>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 py-4">
-        {allPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} pubDate={post.frontmatter.pubDate} summary={post.frontmatter.summary} tags={post.frontmatter.tags}/>)}
-    </div>
+    <main>
+        <h1 class="text-5xl">This is my blog!</h1>
+        <p class="text-2xl">Every once in a while, I'll organize some of my thoughts or resources and make a little blogpost here.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 py-4">
+            {allPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} pubDate={post.frontmatter.pubDate} summary={post.frontmatter.summary} tags={post.frontmatter.tags}/>)}
+        </div>
+    </main>
 </Layout>

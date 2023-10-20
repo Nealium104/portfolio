@@ -1,14 +1,14 @@
 ---
 const {title, url, pubDate, summary, tags} = Astro.props
 ---
-<div class="bg-gray-700 px-4 py-8 hover:scale-110 hover:bg-gray-600 transition duration-200">
+<main class="bg-gray-700 px-4 py-8 hover:scale-110 hover:bg-gray-600 transition duration-200">
     <a href={url}>
         <div class="flex flex-col">   
-            <h2 class="text-3xl">{title}</h2>
+            <h1 class="text-3xl">{title}</h1>
             <span class="text-sm text-white/50 italic">{pubDate.toLocaleString('en-US')}</span>
             <p>{summary}</p>
             <span class="text-sm text-white/50">Tags: {tags}</span>
             <a class="block pt-2 text-xl" href={url}>Read More</a>
         </div>
     </a>
-</div>
+</main>
