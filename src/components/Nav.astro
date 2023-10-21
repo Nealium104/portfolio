@@ -29,20 +29,26 @@ import { Icon } from "astro-icon";
         </div>
     <!-- Mobile -->
             <div class="w-full flex flex-col items-center">
-                <ul class="absolute hidden flex flex-col gap-48 justify-center items-center bg-slate-900/75 w-full h-screen my-8" id="mobile-nav">
+                <ul class="absolute hidden flex flex-col gap-48 justify-center items-center bg-slate-900/90 w-full h-screen my-8" id="mobile-nav">
                     <li class="flex flex-col items-center">
-                        <Icon class="text-white w-8" pack="mdi" name="folder"/>
-                        <a class="px-4 transition duration-150 hover:text-primary hover:scale-125" href="/projects">Projects</a>
+                        <a class="px-4 transition duration-150 hover:text-primary hover:scale-125 flex flex-col items-center" href="/projects">
+                            <Icon class="text-white w-8" pack="mdi" name="folder"/>
+                            <div>Projects</div>
+                        </a>
                     </li>
                     <!-- <a class="px-4 transition duration-150 hover:text-white hover:scale-125" href="/photography">Photography</a>
                     <a class="px-4 transition duration-150 hover:text-red-900 hover:scale-125" href="/music">Music</a> -->
                     <li class="flex flex-col items-center">
-                        <Icon class="text-white w-8" pack="mdi" name="notebook" />
-                        <a class="px-4 transition duration-150 hover:scale-125" href="/blog">Blog</a>
+                        <a class="px-4 transition duration-150 hover:scale-125 flex flex-col items-center" href="/blog">
+                            <Icon class="text-white w-8" pack="mdi" name="notebook" />
+                            <div>Blog</div>
+                        </a>
                     </li>
                     <li class="flex flex-col items-center">
-                        <Icon class="text-white w-8" pack="mdi" name="account-voice" />
-                        <a class="px-4 transition duration-150 hover:scale-125" href="/contact">Contact</a>
+                        <a class="px-4 transition duration-150 hover:scale-125 flex flex-col items-center" href="/contact">
+                            <Icon class="text-white w-8" pack="mdi" name="account-voice" />
+                            <div>Contact</div>
+                        </a>
                     </li>
                 </ul>
             </div>
