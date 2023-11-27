@@ -53,22 +53,28 @@ import { Icon } from "astro-icon";
                 </ul>
             </div>
         </div>
-        <script>
-            document.addEventListener('astro:page-load', () => {
-                const button = document.getElementById('hamburger-button');
-                const nav = document.getElementById('mobile-nav');
-    
-                button.addEventListener('click', () => {
-                    nav.classList.toggle('hidden')
-                });
-            });
-    
-            document.addEventListener('astro:after-swap', () => { 
-                button.addEventListener('click', function() {
-                    nav.classList.toggle('hidden')
-                });
-            });
-    
-        </script>
     </nav>
 </div>
+<script>
+
+    document.addEventListener('astro:page-load', () => {
+        const button = document.getElementById('hamburger-button');
+        const nav = document.getElementById('mobile-nav');
+
+        if (button && nav) {
+            button.addEventListener('click', () => {
+                nav.classList.toggle('hidden')
+            });
+        }
+    });
+
+    // document.addEventListener('astro:after-swap', () => { 
+    //     const button = document.getElementById('hamburger-button');
+    //     const nav = document.getElementById('mobile-nav');
+
+    //     button.addEventListener('click', function() {
+    //         nav.classList.toggle('hidden')
+    //     });
+    // });
+
+</script>

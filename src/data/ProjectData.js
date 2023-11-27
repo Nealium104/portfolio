@@ -18,14 +18,6 @@ const ProjectData = [
     link: "https://lextalk.tech/",
     github: "https://github.com/bluegrass-devs/lextalk-tech",
   },
-  // {
-  //   title: "Portfolio",
-  //   src: "/",
-  //   description: "You're here right now! This is my portfolio site.",
-  //   tools: "Astro 3, Tailwind, Netflify",
-  //   link: "https://neal-powers.com",
-  //   github: "https://github.com/Nealium104/portfolio",
-  // },
   {
     title: "Gig-Econ",
     src: "https://res.cloudinary.com/dwbwyzsyp/image/upload/v1689557116/Portfolio/Screenshot_2023-07-16_212458_oonzxt.png",
@@ -34,6 +26,16 @@ const ProjectData = [
     tools: "Next.js, Tailwind, Vercel, MongoDB",
     link: "https://gig-econ.vercel.app/",
     github: "https://github.com/Nealium104/counter",
+  },
+  {
+    title: "Helms Trumpet - Finished Pending Client Content",
+    src: "https://res.cloudinary.com/dwbwyzsyp/image/upload/v1701047511/Screenshot_2023-11-26_195231_afzins.png",
+    description:
+      "This is a personal website for a trumpet player that lives in Memphis. I used a CMS for content management!",
+    tools:
+      "Astro, Tailwind, Contentful, JavaScript, Netlify, Serverless Functions",
+    link: "https://helmstrumpet.netlify.app/",
+    github: "https://github.com/Nealium104/helmstrumpet",
   },
 ];
 
