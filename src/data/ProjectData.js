@@ -27,16 +27,6 @@ const ProjectData = [
     link: "https://gig-econ.vercel.app/",
     github: "https://github.com/Nealium104/counter",
   },
-  {
-    title: "Helms Trumpet - Finished Pending Client Content",
-    src: "https://res.cloudinary.com/dwbwyzsyp/image/upload/v1701047511/Screenshot_2023-11-26_195231_afzins.png",
-    description:
-      "This is a personal website for a trumpet player that lives in Memphis. I used a CMS for content management!",
-    tools:
-      "Astro, Tailwind, Contentful, JavaScript, Netlify, Serverless Functions",
-    link: "https://helmstrumpet.netlify.app/",
-    github: "https://github.com/Nealium104/helmstrumpet",
-  },
 ];
 
 export default ProjectData;
