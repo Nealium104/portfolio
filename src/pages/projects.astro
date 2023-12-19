@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { slide } from "astro:transitions";
 import Project from "../components/Project.astro";
 import ProjectData from '../data/ProjectData.js'
+import inProgProjectData from "../data/inProgProjectData";
 ---
 <Layout>
     <div transition:animate={slide({ duration: '1.0s' })} class="px-4 md:py-8">
@@ -19,6 +20,19 @@ import ProjectData from '../data/ProjectData.js'
                         link={project.link}
                         github={project.github}
                     />
+            ))}
+        </section>
+        <h2 class="text-2xl pt-12">In-Progress or Pending Completion Projects:</h2>
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch justify-items-end py-4">
+            {inProgProjectData.map(project => (
+            <Project
+                title={project.title}
+                src={project.src}
+                description={project.description}
+                tools={project.tools}
+                link={project.link}
+                github={project.github}
+            />
             ))}
         </section>
     </div>
