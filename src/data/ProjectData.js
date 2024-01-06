@@ -27,6 +27,15 @@ const ProjectData = [
     link: "https://gig-econ.vercel.app/",
     github: "https://github.com/Nealium104/counter",
   },
+  {
+    title: "Tyler Helms Trumpet",
+    src: "https://res.cloudinary.com/dwbwyzsyp/image/upload/v1701047511/Screenshot_2023-11-26_195231_afzins.png",
+    description: "A website for a talented trumpet player from Memphis!",
+    tools:
+      "Astro, Tailwind, Cloudinary, Contentful, Netlify, SendGrid, Node.js",
+    link: "https://helmstrumpet.netlify.app/",
+    github: "https://github.com/Nealium104/helmstrumpet",
+  },
 ];
 
 export default ProjectData;
