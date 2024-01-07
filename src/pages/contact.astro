@@ -15,20 +15,20 @@ import { slide } from "astro:transitions";
             <div class="flex flex-col md:flex-row gap-4 w-full">
               <div class="flex flex-col w-full">
                   <label for="name">Name:</label>
-                  <input class="text-black px-2" type="text" name="name" placeholder="John Doe" required>
+                  <input class="text-black px-2 placeholder:italic placeholder:font-thin" type="text" name="name" placeholder="John Doe" required>
               </div>
               <div class="flex flex-col w-full">
                   <label for="email">Email:</label>
-                  <input class="text-black px-2" type="email" name="email" placeholder="johndoe@example.com" required>
+                  <input class="text-black px-2 placeholder:italic placeholder:font-thin" type="email" name="email" placeholder="johndoe@example.com" required>
               </div>
             </div>
             <div class="flex flex-col w-full">
               <label for="subject">Subject:</label>
-              <input class="text-black px-2" type="text" name="subject" placeholder="Your next project" required>
+              <input class="text-black px-2 placeholder:italic placeholder:font-thin" type="text" name="subject" placeholder="Your next project" required>
           </div>
             <div class="flex flex-col w-full">
                 <label for="message">Message:</label>
-                <textarea class="text-black px-2" name="message" placeholder="Hi, I want to collaborate!" rows="4" required></textarea>
+                <textarea class="text-black px-2 placeholder:italic placeholder:font-thin" name="message" placeholder="Hi, I want to collaborate!" rows="4" required></textarea>
             </div>
             <button class="bg-slate-900 px-4 py-2 transition duration-200 hover:scale-110 hover:bg-slate-800" type="submit">Send</button>
           </form>      
