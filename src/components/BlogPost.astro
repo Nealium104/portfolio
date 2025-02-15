@@ -5,7 +5,7 @@ const {title, url, pubDate, summary, tags} = Astro.props
     <a class="inline-block h-full w-full px-4 py-2" href={url}>
         <div class="flex flex-col justify-evenly h-full gap-2">   
             <h1 class="text-3xl">{title}</h1>
-            <span class="text-sm text-white/50 italic">{pubDate.toLocaleString('en-US')}</span>
+            <span class="text-sm text-white/50 italic">{new Date(pubDate).toLocaleString('en-US')}</span>
             <p>{summary}</p>
             <span class="text-sm text-white/50">Tags: {tags}</span>
             <span class="bg-gray-800 w-fit px-2 py-2 group-hover:bg-gray-700 transition duration-200">Read More</span>
