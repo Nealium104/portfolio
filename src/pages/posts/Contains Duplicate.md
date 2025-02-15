@@ -1,5 +1,5 @@
 ---
-title: DSA Solutions: Contains Duplicate
+title: DSA Solutions - Contains Duplicate
 pubDate: 02/14/2025
 author: Neal Powers
 layout: "../../layouts/MarkdownPostLayout.astro"
